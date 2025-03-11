@@ -140,6 +140,7 @@ button {
   height: 2px;
   display: block;
   transition: 300ms;
+  background-color: #242851;
 }
 
 .header_item_link:hover::after {
@@ -159,6 +160,102 @@ button {
 
 .header_tel:hover {
   box-shadow: 0 10px 25px 0 #ff7852
+}
+
+/* ----------------------overlay--------------------- */
+.header_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(40, 10, 10, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  z-index: 200;
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.header_container_overlay {
+  width: 250px;
+  padding: 30px 30px 30px 30px;
+  height: 80%;
+  background: #fff;
+  margin: 0 auto;
+  top: 50%;
+  right: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  border-radius: 20px 0 0 20px;
+}
+
+.header_overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.header_overlay_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.header_menu_close_btn {
+  width: 100%;
+  padding: 16px 50px 16px 50px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 10px 25px 0 rgba(255, 124, 84, 0.3);
+  background: linear-gradient(180deg, #ffa992 0%, #ff7852 100%);
+  transition: box-shadow 250ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.header_overlay_input {}
+
+.overlay_list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay_item {}
+
+.overlay_link {
+  padding: 10px 50px;
+}
+
+.overlay_link:hover,
+.overlay_link:active {
+  text-shadow: 2px 2px 3px #ff7852;
+  color: #242851;
+}
+
+.js-open-menu svg,
+.js-close-menu svg {
+  width: 24px;
+  height: 24px;
+}
+
+.header_overlay_button_box {
+  display: none;
 }
 
 @media screen and (max-width:1440px) {
@@ -189,8 +286,31 @@ button {
   .header_container {
     max-width: 1024px;
     display: flex;
-    flex-direction: column;
     gap: 35px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  .header_overlay_button_box {
+    display: block;
+  }
+
+  .header_nav {
+    display: none;
+  }
+
+  .header_tel {
+    order: 2;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .header_container {
+    flex-wrap: wrap;
   }
 }
 
@@ -625,7 +745,6 @@ button {
 
 .about_title {
   font-weight: 800;
-  font-size: 64px;
   margin-bottom: 30px;
   max-width: 638px;
 }
@@ -879,7 +998,6 @@ button {
 .pricing_item:hover {
   transform: scale(1.1);
   box-shadow: 0 15px 40px 0 rgba(255, 103, 61, 0.3);
-  /* background: linear-gradient(180deg, #ffa389 0%, #ff6439 100%); */
 }
 
 .pricing_subtitle {
@@ -1142,6 +1260,134 @@ button {
   }
 }
 
+/* -----calltoactionModal----- */
+.calltoaction_modal {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(40, 10, 10, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.445, 0.05, 0.55, 0.95)
+}
+
+.calltoaction_modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.calltoaction_modal_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  /* min-height: 500px; */
+  background-color: #fff;
+  padding: 60px 20px 20px;
+  box-shadow: rgba(217, 200, 193, 0.3) 0px 0px 15px 10px;
+  border-radius: 20px;
+  transition: transform 250ms cubic-bezier(0.445, 0.05, 0.55, 0.95)
+}
+
+
+.calltoaction_modal_close {
+  background: linear-gradient(180deg, #ffa992 0%, #ff7852 100%);
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calltoaction_icon {
+  fill: #fff;
+}
+
+.calltoaction_modal_subtitle {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #707283;
+}
+
+.calltoaction_modal_form {}
+
+.calltoaction_form_group {
+  margin-bottom: 12px;
+}
+
+.calltoaction_modal_label {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.calltoaction_modal_input {
+  width: 100%;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 12px 15px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.calltoaction_modal_option {
+  margin-bottom: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  color: #707283;
+}
+
+.calltoaction_modal_select {
+  width: 100%;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 12px 15px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 700;
+  font-size: 16px;
+  color: #707283;
+}
+
+.calltoaction_modal_textarea {
+  width: 100%;
+  height: 100%;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 10px;
+  background-color: transparent;
+  padding: 12px 15px;
+  outline: none;
+  resize: none;
+}
+
+.calltoaction_modal_input:focus,
+.calltoaction_modal_textarea:focus {
+  border-color: #8ec637
+}
+
+.calltoaction_mobile_button {}
+
 
 /* -----footer----- */
 .footer_section {
@@ -1217,6 +1463,7 @@ button {
   font-size: 18px;
   color: #707283;
   padding: 18px 160px 19px 30px;
+  outline: transparent;
 }
 
 .footer_content_input::placeholder {
@@ -1286,6 +1533,12 @@ button {
   font-weight: 400;
   font-size: 18px;
   color: #707283;
+  transition: color 250ms cubic-bezier(0.445, 0.05, 0.55, 0.95), text-shadow 250ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.footer_content_link:hover {
+  text-shadow: 2px 2px 3px #ff7852;
+  color: #242851;
 }
 
 .footer_copyright_text {

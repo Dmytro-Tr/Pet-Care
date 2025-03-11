@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/images/favicon/favicon.png" type="image/png">
-
   <link href="https://fonts.googleapis.com/css?family=Nunito:600,700,800,900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:regular,700&display=swap" rel="stylesheet">
 
@@ -17,48 +16,83 @@
 </head>
 
 <body>
-
   <header class="header">
     <div class="header_container">
       <a class="header_logo" href="index.html">Vet<span class="header_logo_span">care</span></a>
       <nav class="header_nav">
         <ul class="heder_list">
           <li class="header_item">
-            <a class="header_item_link" href="">Start</a>
+            <a class="header_item_link" href="#start">Start</a>
           </li>
           <li class="header_item">
-            <a class="header_item_link" href="">Services</a>
+            <a class="header_item_link" href="#services">Services</a>
           </li>
           <li class="header_item">
-            <a class="header_item_link" href="">About</a>
+            <a class="header_item_link" href="#about">About</a>
           </li>
           <li class="header_item">
-            <a class="header_item_link" href="">News</a>
+            <a class="header_item_link" href="#pricing">News</a>
           </li>
           <li class="header_item">
-            <a class="header_item_link" href="">Contact</a>
+            <a class="header_item_link" href="#contact">Contact</a>
           </li>
         </ul>
       </nav>
       <a class="header_tel" href="tel:+384-129-293-39" target="_blank">384-129-293-39</a>
+      <div class="header_overlay_button_box">
+        <button class="header_overlay_button js-open-menu" aria-expanded="false" aria-controls="mobile-menu"
+          type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="header_menu js-menu-container" id="mobile-menu">
+        <div class="header_container_overlay">
+          <nav class="header_overlay mobile-nav">
+            <ul class="overlay_list">
+              <li class="overlay_item">
+                <a href="#start" class="overlay_link">Start</a>
+              </li>
+              <li class="overlay_item">
+                <a href="#services" class="overlay_link">Services</a>
+              </li>
+              <li class="overlay_item">
+                <a href="#about" class="overlay_link">About</a>
+              </li>
+              <li class="overlay_item">
+                <a href="#pricing" class="overlay_link">News</a>
+              </li>
+              <li class="overlay_item">
+                <a href="#contact" class="overlay_link">Contact</a>
+              </li>
+            </ul>
+            <button class="header_menu_close_btn js-close-menu" type="button">Close</button>
+          </nav>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero_section section">
       <div class="hero_container container">
-        <h1 class="hero_title">For Your Pet’s Natural Life & Care</h1>
+        <h1 class="hero_title" id="start">For Your Pet’s Natural Life & Care</h1>
         <p class="hero_text">Holistic veterinary care for your pet's health and happiness.</p>
         <div class="hero_bink_box">
-          <a class="hero_link_pink" href="">Our Services</a>
-          <a class="hero_link_green" href="">Make Appointment</a>
+          <a class="hero_link_pink" href="#services">Our Services</a>
+          <a class="hero_link_green" href="#contact">Make Appointment</a>
         </div>
       </div>
     </section>
 
     <section class="services_section section">
       <div class="services_container container">
-        <h4 class="services_subtitle">Care For Your Pet</h4>
+        <h4 class="services_subtitle" id="services">Care For Your Pet</h4>
         <h2 class="services_title title_two">What We Do</h2>
         <div class="services_content">
           <ul class="services_list">
@@ -105,7 +139,7 @@
 
     <section class="about_section section">
       <div class="about_container container">
-        <h4 class="about_subtitle">Our Success Story</h4>
+        <h4 class="about_subtitle" id="about">Our Success Story</h4>
         <h2 class="about_title title_two">Experience Vet Clinic
           And Services</h2>
         <p class="about_text">Experience Vet Clinic provides top-quality care for pets with skilled veterinarians. Our
@@ -134,14 +168,14 @@
             Affordable and Transparent Pricing
           </li>
         </ul>
-        <a class="about_link" href="">Know More About Us</a>
+        <a class="about_link" href="#aboutUs">Know More About Us</a>
       </div>
     </section>
 
     <section class="team_section section">
       <div class="team_container container">
-        <h4 class="team_subtitle">Our Team</h4>
-        <h2 class="team_title title_two">Meet Our Groomers</h2>
+        <h4 class="team_subtitle" id="aboutUs">Our Team</h4>
+        <h2 class="team_title title_two">Meet Our Veterinary Team</h2>
         <div class="team_content">
           <ul class="team_list">
             <li class="team_item">
@@ -191,7 +225,7 @@
 
     <section class="pricing_section section">
       <div class="pricing_container container">
-        <h2 class="pricing_title visually-hidden">Pricing Plan</h2>
+        <h2 class="pricing_title visually-hidden" id="pricing">Pricing Plan</h2>
         <ul class="pricing_list">
           <li class="pricing_item">
             <p class="pricing_subtitle">Regular Pack</p>
@@ -239,13 +273,15 @@
     <section class="calltoaction_section section">
       <div class="calltoaction_container container">
         <div class="calltoaction_text-box">
-          <h2 class="calltoaction_title title_two">Professional Pet Care</h2>
+          <h2 class="calltoaction_title title_two" id="contact">Professional Pet Care</h2>
           <p class="calltoaction_text">Pet owners trust us to look after the needs of their beloved companions. We are
             specialists committed to delivering the
             very highest of veterinary care and affection.</p>
-        </div> <button class="calltoaction_button" type="submit">Contact Us Now</button>
+        </div>
+        <button class="calltoaction_button" type="submit" data-menu-open>Contact Us Now</button>
       </div>
     </section>
+
   </main>
 
   <footer class="footer_section section">
@@ -267,24 +303,25 @@
           <li class="footer_content_item footer_content_address">
             <h4 class="footer_content_subtitle">Address</h4>
             <nav class="footer_content_address_box">
-              <a class="footer_content_link" href="tel:+2338448529">+23 384 485 29</a>
-              <a class="footer_content_link" href="mailto:vet@shamim.com">vet@shamim.com</a>
-              <a class="footer_content_link" href="https://maps.app.goo.gl/1yeBrbndUsbndA4r5">123 king street, Melbrown
+              <a class="footer_content_link" href="tel:+2338448529" target="_blank">+23 384 485 29</a>
+              <a class="footer_content_link" href="mailto:vet@shamim.com" target="_blank">vet@shamim.com</a>
+              <a class="footer_content_link" href="https://maps.app.goo.gl/1yeBrbndUsbndA4r5" target="_blank">123 king
+                street, Melbrown
                 Victoria 3000, Australia</a>
             </nav>
           </li>
           <li class="footer_content_item footer_content_links">
             <h4 class="footer_content_subtitle">Links</h4>
             <nav class="footer_content_links_box">
-              <a class="footer_content_link" href="">About Us</a>
-              <a class="footer_content_link" href="">Groomers</a>
-              <a class="footer_content_link" href="">Contact Us</a>
-              <a class="footer_content_link" href="">Privacy Policy</a>
-              <a class="footer_content_link" href="">Tearms</a>
+              <a class="footer_content_link" href="#about">About Us</a>
+              <a class="footer_content_link" href="#aboutUs">Groomers</a>
+              <a class="footer_content_link" href="#contact">Contact Us</a>
+              <a class="footer_content_link" href="#privacyPolicy">Privacy Policy</a>
+              <a class="footer_content_link" href="#aboutUs">Teams</a>
             </nav>
           </li>
           <li class="footer_content_item footer_content_opening">
-            <h4 class="footer_content_subtitle">Opening Hours</h4>
+            <h4 class="footer_content_subtitle" id="privacyPolicy">Opening Hours</h4>
             <div class="footer_content_opening_box">
               <p class="footer_content_text">Monday-Tuesday 09:00-18:00</p>
               <p class="footer_content_text">Wednesday 09:00-18:00</p>
@@ -303,7 +340,43 @@
     </div>
 
   </footer>
+  <div class="calltoaction_modal" data-menu>
+    <div class="calltoaction_modal_content">
+      <button class="calltoaction_modal_close" type="button" data-menu-close>
+        <svg class="calltoaction_icon" width="30" height="30">
+          <use href="./images/svg/icons.svg#icon-x"></use>
+        </svg>
+      </button>
+      <p class="calltoaction_modal_subtitle">Leave your contacts and we will call you back</p>
+      <form class="calltoaction_modal_form" id="contactForm">
+        <div class="calltoaction_form_group">
+          <label class="calltoaction_modal_label" for="phone">Phone Number:</label>
+          <input class="calltoaction_modal_input" type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="calltoaction_form_group">
+          <label class="calltoaction_modal_label" for="name">First Name and Last Name:</label>
+          <input class="calltoaction_modal_input" s type="text" id="name" name="name" required>
+        </div>
+        <div class="calltoaction_form_group">
+          <p class="calltoaction_modal_label">Select a purchase package</p>
+          <select class="calltoaction_modal_select" autofocus>
+            <option class="calltoaction_modal_option" value="1">Regular Pack 3 Days - $150Per Visit</option>
+            <option class="calltoaction_modal_option" value="2">Exclusive Pack 10 Days - $350Per Visit</option>
+            <option class="calltoaction_modal_option" value="3">Premium Pack 30 Days - $550Per Visit</option>
+          </select>
+        </div>
+        <div class="calltoaction_form_group">
+          <label class="calltoaction_modal_label" for="message">Message:</label>
+          <textarea class="calltoaction_modal_textarea" id="message" name="message"></textarea>
+        </div>
+        <button class="calltoaction_mobile_button calltoaction_button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
 
+  <script src="./js/calltoactionModal.js"></script>
+  <script src="https://unpkg.com/body-scroll-lock@3.1.5/lib/bodyScrollLock.min.js"></script>
+  <script src="./js/overlay.js"></script>
 </body>
 
 </html>
