@@ -297,6 +297,7 @@ button {
 
   .header_overlay_button_box {
     display: block;
+    order: 2;
   }
 
   .header_nav {
@@ -304,13 +305,23 @@ button {
   }
 
   .header_tel {
-    order: 2;
+    order: 1;
   }
 }
 
 @media screen and (max-width:600px) {
   .header_container {
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header_overlay_button_box {
+    order: 1;
+  }
+
+  .header_tel {
+    order: 2;
   }
 }
 
